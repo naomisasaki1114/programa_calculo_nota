@@ -52,8 +52,63 @@ for cont in range (quant_alunos):
     prova.append(p1)
     prova.append(p2)
     dados.append(nome)
+    dados.append(prova)
     dados.append(projeto)
     dados.append(media)
     dados.append(mediafinal)
     alunos.append(dados)
 print(alunos[:])
+##MENU DE OPÇÕES
+opcao=0
+while opcao<6:
+    print("-"*50)
+    print("\nMenu:")
+    print("1 - Mostrar Boletim Completo")
+    print("2 - Consultar Aluno")
+    print("3 - Mostrar Aluno com Maior Média Final")
+    print("4 - Mostrar Aluno com Menor Média Final")
+    print("5 - Mostrar Percentual de Alunos com Média Final > 5")
+    print("6 - Sair")
+    print("-"*50)
+    
+    opcao = input("Digite a opção desejada: ")
+
+    if opcao == "1":
+        print("\n>>>Boletim<<<")
+        for estudante in alunos:
+            print("Nome:", estudante[0])
+            print("Notas Teóricas (T1, T2):", estudante[1])
+            print("Notas de Projeto (P1, P2):", estudante[2])
+            print("Média Teórica (MT):", estudante[3][0])
+            print("Média Prática (MP):", estudante[3][1])
+            print("Média Final (MF):", estudante[4])
+            print("-" * 30)
+
+    elif opcao == "2":
+        nomebusca = input("Digite o nome do aluno para consulta: ")
+        existe = False
+        for estudante in alunos:
+            if estudante[0] == nomebusca:
+                print("Nome:", estudante[0])
+                print("Notas Teóricas (T1, T2):", estudante[1])
+                print("Notas de Projeto (P1, P2):", estudante[2])
+                print("Média Teórica (MT):", estudante[3][0])
+                print("Média Prática (MP):", estudante[3][1])
+                print("Média Final (MF):", estudante[4])
+                existe = True
+                break
+        if not existe:
+            print("!"*30)
+            print("ALUNO NÃO ENCONTRADO.")
+            print("!"*30)
+            
+            #ADICIONAR AS OUTRAS OPÇÕES AQUI
+            
+            #OPÇÃO FINAL, FIM DO PROGRAMA
+
+    elif opcao == "6":
+        print("Saindo...")
+        break
+
+    else:
+        print("Opção inválida.")
