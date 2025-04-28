@@ -72,7 +72,7 @@ while menu:
     print("2 - Consultar Aluno")
     print("3 - Mostrar Aluno com Maior Média Final")
     print("4 - Mostrar Aluno com Menor Média Final")
-    print("5 - Mostrar Percentual de Alunos com Média Final > 5")
+    print("5 - Mostrar Percentual de Alunos com Média Final superior a 5.0")
     print("6 - Sair")
     print("-"*50)
     
@@ -114,20 +114,19 @@ while menu:
         for aluno_maiormedia in alunos:
             if aluno_maiormedia[4] == maiormedia:
                 nome_maiormedia = aluno_maiormedia[0] 
-        print(f"\na maior media final é de {maiormedia:.2f} do aluno {nome_maiormedia}")
+        print(f"\na maior media final é de {maiormedia:.2f} do/a aluno {nome_maiormedia}")
         
     elif opcao == 4:
         for aluno_menormedia in alunos:
             if aluno_menormedia[4] == menormedia:
                 nome_menormedia = aluno_menormedia[0]
-        print(f"\n A menor média final é de {menormedia:.2f} do aluno {nome_menormedia}")
+        print(f"\n A menor média final é de {menormedia:.2f} do/a aluno {nome_menormedia}")
 
     elif opcao == 5: 
         for medias in alunos:
             if medias[4]> 5:
                 alunosmaior5+=1
                 percentual= (alunosmaior5/ quant_alunos)* 100
-
         print(f"\n O percentual de alunos com média final maior que 5 é de {percentual:.0f}%")
             
     elif opcao == 6:
